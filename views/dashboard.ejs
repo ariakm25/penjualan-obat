@@ -1,0 +1,35 @@
+<%- include('./includes/header'); %>
+
+  <div class="container my-5">
+    <h4>Selamat Datang</h4>
+    <div>
+      <p class="text-capitalize mb-2">
+        <%= locals.user.nama %>
+      </p>
+      <a href="/logout">Logout</a>
+    </div>
+    <div class="my-5">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Stok Obat</h5>
+              <p class="card-text">Total 0 Tobat.</p>
+              <a href="/obat" class="btn btn-primary">Lihat</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Penjualan</h5>
+              <p class="card-text">Total 0 Penjualan</p>
+              <a href="/penjualan" class="btn btn-primary">Lihat</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('./includes/footer'); %>

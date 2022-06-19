@@ -1,0 +1,33 @@
+<%- include('./includes/header'); %>
+
+  <div class="container-fluid">
+    <div style="margin-top:5rem">
+      <div class="rounded d-flex justify-content-center">
+        <div class="col-md-4 col-sm-12 shadow-lg p-5 bg-light">
+          <div class="text-center">
+            <h3 class="text-primary">Masuk</h3>
+          </div>
+          <%if (typeof error !=="undefined" && error ) {%>
+            <div class="alert alert-danger" role="alert">
+              <%= error %>
+            </div>
+            <%}%>
+              <form action="/login" method="POST">
+                <div class="p-4">
+                  <div class="input-group mb-3">
+                    <input name="email" type="email" class="form-control" placeholder="Email">
+                  </div>
+                  <div class="input-group mb-3">
+                    <input name="password" type="password" class="form-control" placeholder="Password">
+                  </div>
+                  <button class="btn btn-primary text-center mt-2" type="submit">
+                    Masuk
+                  </button>
+                </div>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('./includes/footer'); %>
