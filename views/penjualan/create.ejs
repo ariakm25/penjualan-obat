@@ -1,0 +1,27 @@
+<%- include('../includes/header'); %>
+
+<div class="container">
+	<h2>Create Penjualan</h2>
+
+	<form action="/penjualan/store" method="POST">
+		<div class="mb-3">
+			<label for="obat_id" class="form-label">id_obat</label>
+			<input type="text" name="obat_id" class="form-control" id="obat_id" />
+		</div>
+		<div class="mb-3">
+			<label for="tanggal" class="form-label">Tanggal</label>
+			<input type="text" name="tanggal" class="form-control" id="tanggal" />
+		</div>
+		<div class="mb-3">
+			<label for="qty" class="form-label">Jumlah</label>
+			<input type="number" name="qty" class="form-control" id="qty" />
+		</div>
+		<div class="mb-3">
+			<label for="admin_id" class="form-label">id_Obat</label>
+			<input type="text" name="admin_id" class="form-control" id="admin_id" />
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
+
+<%- include('../includes/footer'); %>

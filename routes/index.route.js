@@ -1,5 +1,6 @@
 const indexController = require('../controllers/index.controller');
-const obatController = require('../controllers/obatController')
+const obatController = require('../controllers/obatController');
+const penjualanController = require('../controllers/penjualan.controller');
 const guest = require('../middlewares/guest');
 const auth = require('../middlewares/auth');
 
@@ -16,5 +17,9 @@ router.post('/obats/store', obatController.store);
 router.get('/obats/:id/edit', obatController.edit);
 router.post('/obats/:id/update', obatController.update);
 router.get('/obats/:id/delete', obatController.delete);
+
+router.get('/penjualans', auth, penjualanController.index);
+router.get('/penjualans/create', auth, penjualanController.create);
+router.post('/penjualans/store', penjualanController.store);
 
 module.exports = router;

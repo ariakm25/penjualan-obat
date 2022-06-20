@@ -1,0 +1,43 @@
+<%- include('../includes/header'); %>
+
+<div class="container">
+	<h2>Create Penjualan</h2>
+	<a href="/penjualans/create">
+		<button class="btn btn-primary">Create Penjualan</button>
+	</a>
+	<!-- <table class="table">
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>id_obat</th>
+				<th>Tanggal</th>
+				<th>Jumlah</th>
+				<th>id_Admin</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% penjualans.forEach(penjualan=> { %>
+			<tr>
+				<td><%= penjualan.id %></td>
+				<td><%= penjualan.obat_id %></td>
+				<td><%= penjualan.tanggal %></td>
+				<td><%= penjualan.qty %></td>
+				<td><%= penjualan.admin_id %></td>
+				<td>
+					<a href="/penjualans/<%= penjualan.id %>/edit">
+						<button class="btn btn-primary">Edit</button>
+					</a>
+					<a
+						href="/penjualans/<%= penjualan.id %>/delete"
+						onclick="confirm('Apakah anda yakin ingin menghapus data ini?')"
+					>
+						<button class="btn btn-danger">Delete</button>
+					</a>
+				</td>
+			</tr>
+			<% }); %>
+		</tbody>
+	</table> -->
+</div>
+
+<%- include('../includes/footer'); %>
