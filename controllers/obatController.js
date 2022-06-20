@@ -16,8 +16,35 @@ module.exports = {
       stok: req.body.stok,
     });
 
-    return res.redirect('/');
+    return res.redirect('/obats');
   },
 
+  edit: async (req, res) => {
+    const obat = await Obat.findByPk(req.params.id);
+    return res.render('obat/edit', {
+      obat
+    })
+  },  
+
+  update : async (req, res)=>{
+    console.log(req.body)
+    await Obat.update(req.body, {
+      where: {
+        id: req.params.id
+      },
+    })
+    
+    return res.redirect('/obats')
+  },
+
+	// delete post from database
+	delete: async (req, res) => {
+		await Obat.destroy({
+			where: {
+				id: req.params.id,
+			},
+		});
+		return res.redirect('/obats');
+	}  
   
 };

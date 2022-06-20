@@ -1,0 +1,21 @@
+<%- include('../includes/header'); %>
+
+  <div class="container">
+    <h2>
+      Edit Obat
+    </h2>
+
+    <form action="/obats/<%- obat.id %>/update" method="POST">
+      <div class="mb-3">
+        <label for="nama" class="form-label">Nama Obat</label>
+        <input type="text" name="nama" class="form-control" id="nama" value="<%- obat.nama %>">
+     </div>
+      <div class="mb-3">
+        <label for="stok" class="form-label">Stok Obat</label>
+        <input type="number" name="stok" class="form-control" id="stok" value="<%- obat.stok %>">
+     </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <%- include('../includes/footer'); %>
