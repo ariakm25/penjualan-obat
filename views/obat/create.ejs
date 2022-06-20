@@ -1,0 +1,21 @@
+<%- include('../includes/header'); %>
+
+  <div class="container">
+    <h2>
+      Create Obat
+    </h2>
+
+    <form action="/obats/store" method="POST">
+      <div class="mb-3">
+        <label for="nama" class="form-label">Nama Obat</label>
+        <input type="text" name="nama" class="form-control" id="nama">
+     </div>
+      <div class="mb-3">
+        <label for="stok" class="form-label">Stok Obat</label>
+        <input type="number" name="stok" class="form-control" id="stok">
+     </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <%- include('../includes/footer'); %>

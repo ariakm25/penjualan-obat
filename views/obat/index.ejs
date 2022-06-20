@@ -1,0 +1,53 @@
+<%- include('../includes/header'); %>
+
+  <div class="container my-5">
+    <h2>
+        All Obat
+      </h2>
+      <a href="/obats/create">
+        <button class="btn btn-primary">
+          Create Obat
+        </button>
+      </a>
+  
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>nama</th>
+            <th>stock</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+         <tbody>
+                <% obats.forEach(obat=> { %>
+                  <tr>
+                    <td>
+                      <%= obat.id %>
+                    </td>
+                    <td>
+                      <%= obat.nama %>
+                    </td>
+                    <td>
+                      <%= obat.stok %>
+                    </td>
+                    <td>
+                      <a href="/obats/<%= obat.id %>/edit">
+                        <button class="btn btn-primary">
+                          Edit
+                        </button>
+                      </a>
+                      <a href="/obats/<%= obat.id %>/delete">
+                        <button class="btn btn-danger">
+                          Delete
+                        </button>
+                      </a>
+                    </td>
+                  </tr>
+                  <% }); %>
+              </tbody>
+       
+      </table>
+  </div>
+
+  <%- include('../includes/footer'); %>

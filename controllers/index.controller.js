@@ -1,4 +1,5 @@
 const { compareSync } = require('bcryptjs');
+const Obat = require('../models/Obat');
 const User = require('../models/User');
 
 module.exports = {
@@ -39,7 +40,8 @@ module.exports = {
   },
 
   dashboard: async (req, res) => {
-    return res.render('dashboard');
+    const countObat = await Obat.count();
+    return res.render('dashboard', {countObat});
   },
 
   logout: async (req, res) => {
