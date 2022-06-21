@@ -21,5 +21,8 @@ router.get('/obats/:id/delete', obatController.delete);
 router.get('/penjualans', auth, penjualanController.index);
 router.get('/penjualans/create', auth, penjualanController.create);
 router.post('/penjualans/store', penjualanController.store);
+router.get('/penjualans/:id/delete', penjualanController.delete);
+router.get('/penjualans/:id/edit', penjualanController.edit);
+router.post('/penjualans/:id/update', penjualanController.update);
 
 module.exports = router;

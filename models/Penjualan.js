@@ -1,5 +1,7 @@
 const { DataTypes } = require('sequelize');
 const db = require('../database');
+const Obat = require('./Obat');
+const User = require('./User');
 
 const Penjualan = db.define('Penjualan', {
 	id: {
@@ -9,9 +11,8 @@ const Penjualan = db.define('Penjualan', {
 	},
 	obat_id: {
 		type: DataTypes.INTEGER,
-		allowNull: false,
 		references: {
-			model: 'Obat',
+			model: Obat,
 			key: 'id',
 		},
 	},
@@ -21,7 +22,7 @@ const Penjualan = db.define('Penjualan', {
 		type: DataTypes.INTEGER,
 		allowNull: false,
 		references: {
-			model: 'User',
+			model: User,
 			key: 'id',
 		},
 	},

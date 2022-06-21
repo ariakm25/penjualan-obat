@@ -1,12 +1,18 @@
 <%- include('../includes/header'); %>
 
-<div class="container">
-	<h2>Create Penjualan</h2>
+  <div class="container">
+    <h2>
+      Edit Penjualan
+    </h2>
 
-	<form action="/penjualans/store" method="POST">
-		<div class="mb-3">
+    <form action="/penjualans/<%- penjualan.id %>/update" method="POST">
+        <div class="mb-3">
 			<label for="obat_id" class="form-label">id_obat</label>
-			<input type="text" name="obat_id" class="form-control" id="obat_id" />
+			<select name="obat_id" id="obat_id" class="form-select">
+                <% obat.forEach(function(obats) { %>
+                    <option value="<%= obats.id %>"> <%= obats.id %></option>
+                 <% }); %> 
+            </select>
 		</div>
 		<div class="mb-3">
 			<label for="tanggal" class="form-label">Tanggal</label>
@@ -21,7 +27,7 @@
 			<input type="text" name="admin_id" class="form-control" id="admin_id" />
 		</div>
 		<button type="submit" class="btn btn-primary">Submit</button>
-	</form>
-</div>
+    </form>
+  </div>
 
-<%- include('../includes/footer'); %>
+  <%- include('../includes/footer'); %>
